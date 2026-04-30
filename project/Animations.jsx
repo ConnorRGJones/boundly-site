@@ -31,7 +31,7 @@ const Reveal = ({ children, delay = 0, style = {} }) => {
 };
 
 // Stagger group: wraps children and staggers their reveals
-const RevealGroup = ({ children, stagger = 80, style = {} }) => {
+const RevealGroup = ({ children, stagger = 80, style = {}, className = '' }) => {
   const ref = React.useRef(null);
   const [visible, setVisible] = React.useState(false);
 
@@ -49,7 +49,7 @@ const RevealGroup = ({ children, stagger = 80, style = {} }) => {
   }, []);
 
   return (
-    <div ref={ref} style={style}>
+    <div ref={ref} style={style} className={className}>
       {React.Children.map(children, (child, i) =>
         child ? (
           <div style={{
