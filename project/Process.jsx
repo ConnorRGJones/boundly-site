@@ -59,6 +59,7 @@ const ProcessCard = ({ num, label, body, pull, dark }) => {
   const [hov, setHov] = React.useState(false);
   return (
     <div
+      className="process-card"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
