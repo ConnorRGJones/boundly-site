@@ -121,8 +121,20 @@ const RoleChip = ({ role }) => {
 const BoundlyCTA = () => {
   const [form, setForm] = React.useState({ name: '', email: '', company: '', message: '' });
   const [submitted, setSubmitted] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append('form-name', 'contact');
+    data.append('name', form.name);
+    data.append('email', form.email);
+    data.append('company', form.company);
+    data.append('message', form.message);
+    fetch('/', { method: 'POST', body: data })
+      .then(() => setSubmitted(true))
+      .catch(() => setError(true));
+  };
 
   return (
     <section id="contact" style={{ background: '#111111', padding: '80px 32px' }}>
@@ -153,8 +165,15 @@ const BoundlyCTA = () => {
               <div style={{ fontFamily: "'Recoleta', serif", fontSize: 28, fontWeight: 900, color: '#fff', marginBottom: 10 }}>Thank you<span style={{ color: '#C47D3F' }}>.</span></div>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.4)' }}>I'll be in touch within 24 hours.</p>
             </div>
+          ) : error ? (
+            <div style={{ textAlign: 'center', padding: '32px 0' }}>
+              <div style={{ fontFamily: "'Recoleta', serif", fontSize: 22, fontWeight: 900, color: '#fff', marginBottom: 10 }}>Something went wrong<span style={{ color: '#C47D3F' }}>.</span></div>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.4)' }}>Please email me directly at <a href="mailto:connor@boundly.io" style={{ color: '#C47D3F' }}>connor@boundly.io</a></p>
+            </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <form name="contact" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               {[
                 { key: 'name', label: 'Name *', placeholder: 'Your name', type: 'text' },
                 { key: 'email', label: 'Email *', placeholder: 'your@company.com', type: 'email' },
