@@ -1,22 +1,49 @@
-# CODING AGENTS: READ THIS FIRST
+# Boundly
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+**Boutique GTM recruitment for UK SaaS companies — pre-seed through Series B.**
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Live site: [boundly.io](https://boundly.io)
 
-## What you should do — IMPORTANT
+## Stack
 
-**Read `boundly-website/project/Boundly Website - Export.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+- Vanilla HTML/CSS with React 18 (via CDN) and Babel Standalone
+- No build step required — open `index.html` to run locally
+- Deployed on Netlify with auto-deploy from `main`
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Structure
 
-## About the design files
+```
+index.html          # Entry point
+/images             # Logo and photography
+/css                # Recoleta font files
+/project            # React component source files
+  Animations.jsx
+  Header.jsx
+  Hero.jsx
+  Stats.jsx
+  Process.jsx
+  Testimonials.jsx
+  CTA.jsx
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## Local development
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Open `index.html` directly in a browser, or serve it with any static file server:
 
-## Bundle contents
+```bash
+npx serve .
+```
 
-- `boundly-website/README.md` — this file
-- `boundly-website/project/` — the `Boundly Website` project files (HTML prototypes, assets, components)
+## Deployment
+
+Every push to `main` auto-deploys to [boundly.io](https://boundly.io) via Netlify.
+
+For changes, create a feature branch and open a PR:
+
+```bash
+git checkout -b feature/your-change
+# make edits
+git add . && git commit -m "describe change"
+git push -u origin feature/your-change
+gh pr create
+```
