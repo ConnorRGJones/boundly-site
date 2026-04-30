@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(sed -i '' 's|src=\"assets/boundly-logo.png\"|src=\"project/assets/boundly-logo.png\"|g' /Users/connor/Desktop/boundly-website/project/Header.jsx)",
+      "Bash(sed -i '' 's|src=\"assets/connor.jpg\"|src=\"project/assets/connor.jpg\"|g' /Users/connor/Desktop/boundly-website/project/CTA.jsx)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx --version)",
+      "Bash(npm --version)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/Cellar/node/25.9.0_2/bin/**)",
+      "Read(//opt/homebrew/Cellar/gh/2.92.0/bin/**)",
+      "Bash(/opt/homebrew/bin/npm install *)",
+      "Bash(/opt/homebrew/bin/node --version)",
+      "Bash(/opt/homebrew/bin/npm --version)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(npm install *)",
+      "Bash(netlify --version)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(sed -i '' \"s|src: url\\('project/fonts/Recoleta-Bold.ttf'\\)|src: url\\('css/Recoleta-Bold.ttf'\\)|g; s|src: url\\('project/fonts/Recoleta-SemiBold.ttf'\\)|src: url\\('css/Recoleta-SemiBold.ttf'\\)|g; s|src: url\\('project/fonts/Recoleta-Black.ttf'\\)|src: url\\('css/Recoleta-Black.ttf'\\)|g\" /Users/connor/Desktop/boundly-website/index.html)",
+      "Bash(sed -i '' 's|project/assets/boundly-logo.png|images/boundly-logo.png|g' /Users/connor/Desktop/boundly-website/project/Header.jsx)",
+      "Bash(sed -i '' 's|project/assets/connor.jpg|images/connor.jpg|g' /Users/connor/Desktop/boundly-website/project/CTA.jsx)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(gh api *)",
+      "Bash(git config *)",
+      "Bash(git push *)"
+    ]
+  }
+}
