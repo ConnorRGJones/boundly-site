@@ -43,21 +43,28 @@ const StatItem = ({ value, suffix, label, sub }) => {
   );
 };
 
-const BoundlyStats = () => (
-  <section style={{ background: '#fff', borderBottom: '1px solid rgba(34,42,53,0.07)' }}>
-    <div className="stats-grid" style={{ maxWidth: 1080, margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-      {[
-        { value: 130, suffix: '+', label: 'Hires made', sub: 'Across Series A to public scale' },
-        { value: 92, suffix: '%', label: 'Offer acceptance', sub: 'Candidates who said yes and meant it' },
-        { value: 7, suffix: '+', label: 'Years in GTM hiring', sub: 'Agency and in-house combined' },
-      ].map((s, i) => (
-        <div key={i} className={i < 2 ? 'stats-divider' : ''} style={{ borderRight: i < 2 ? '1px solid rgba(34,42,53,0.07)' : 'none', padding: '0 32px' }}>
-          <Reveal delay={i * 120}><StatItem {...s} /></Reveal>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const BoundlyStats = () => {
+  const isMobile = useMobile();
+  return (
+    <section style={{ background: '#fff', borderBottom: '1px solid rgba(34,42,53,0.07)' }}>
+      <div className="stats-grid" style={{ maxWidth: 1080, margin: '0 auto', padding: isMobile ? '0 20px' : '0 32px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)' }}>
+        {[
+          { value: 130, suffix: '+', label: 'Hires made', sub: 'Across Series A to public scale' },
+          { value: 92, suffix: '%', label: 'Offer acceptance', sub: 'Candidates who said yes and meant it' },
+          { value: 7, suffix: '+', label: 'Years in GTM hiring', sub: 'Agency and in-house combined' },
+        ].map((s, i, arr) => (
+          <div key={i} className={i < 2 ? 'stats-divider' : ''} style={{
+            borderRight: (!isMobile && i < 2) ? '1px solid rgba(34,42,53,0.07)' : 'none',
+            borderBottom: (isMobile && i < arr.length - 1) ? '1px solid rgba(34,42,53,0.07)' : 'none',
+            padding: isMobile ? '0 8px' : '0 32px',
+          }}>
+            <Reveal delay={i * 120}><StatItem {...s} /></Reveal>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 // Founder quote bar
 const BoundlyQuote = () => (
