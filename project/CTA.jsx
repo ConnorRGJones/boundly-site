@@ -119,6 +119,7 @@ const RoleChip = ({ role }) => {
 };
 
 const BoundlyCTA = () => {
+  const isMobile = useMobile();
   const [form, setForm] = React.useState({ name: '', email: '', company: '', message: '' });
   const [submitted, setSubmitted] = React.useState(false);
   const [error, setError] = React.useState(false);
@@ -159,7 +160,7 @@ const BoundlyCTA = () => {
           </div>
         </div>
 
-        <div style={{ background: '#1a1a1a', borderRadius: 16, padding: '36px 32px', border: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ background: '#1a1a1a', borderRadius: 16, padding: '36px 32px', border: '1px solid rgba(255,255,255,0.07)', marginTop: isMobile ? 40 : 0 }}>
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '32px 0' }}>
               <div style={{ fontFamily: "'Recoleta', serif", fontSize: 28, fontWeight: 900, color: '#fff', marginBottom: 10 }}>Thank you<span style={{ color: '#C47D3F' }}>.</span></div>
