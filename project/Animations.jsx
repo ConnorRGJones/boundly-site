@@ -64,4 +64,17 @@ const RevealGroup = ({ children, stagger = 80, style = {}, className = '' }) => 
   );
 };
 
-Object.assign(window, { Reveal, RevealGroup });
+// Mobile breakpoint hook — returns true when width <= breakpoint
+const useMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth <= breakpoint
+  );
+  React.useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth <= breakpoint);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, [breakpoint]);
+  return isMobile;
+};
+
+Object.assign(window, { Reveal, RevealGroup, useMobile });

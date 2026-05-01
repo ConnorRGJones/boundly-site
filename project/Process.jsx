@@ -1,6 +1,7 @@
 // Process.jsx — Clean editorial cards, no ATS mockups
 
 const BoundlyProcess = () => {
+  const isMobile = useMobile();
   const steps = [
     {
       num: '01',
@@ -45,9 +46,9 @@ const BoundlyProcess = () => {
         </div>
 
         {/* Steps grid */}
-        <RevealGroup stagger={100} style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2 }} className="process-grid">
+        <RevealGroup stagger={100} style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)', gap: 2 }} className="process-grid">
           {steps.map((step, i) => (
-            <ProcessCard key={i} {...step} dark={i === 1 || i === 2} />
+            <ProcessCard key={i} {...step} dark={isMobile ? i % 2 === 1 : (i === 1 || i === 2)} />
           ))}
         </RevealGroup>
       </div>
