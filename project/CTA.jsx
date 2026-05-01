@@ -126,14 +126,23 @@ const BoundlyCTA = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append('form-name', 'contact');
-    data.append('name', form.name);
-    data.append('email', form.email);
-    data.append('company', form.company);
-    data.append('message', form.message);
-    fetch('/', { method: 'POST', body: data })
-      .then(() => setSubmitted(true))
+    fetch('https://formsubmit.co/ajax/connor@boundly.io', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        company: form.company,
+        message: form.message,
+        _subject: 'New enquiry via Boundly.io',
+        _captcha: 'false',
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) setSubmitted(true);
+        else setError(true);
+      })
       .catch(() => setError(true));
   };
 
