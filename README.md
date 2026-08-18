@@ -1,29 +1,22 @@
 # Boundly
 
-**Boutique GTM recruitment for UK SaaS companies — pre-seed through Series B.**
+**Boutique GTM recruitment for UK B2B SaaS companies — pre-seed through to enterprise.**
 
 Live site: [boundly.io](https://boundly.io)
 
 ## Stack
 
-- Vanilla HTML/CSS with React 18 (via CDN) and Babel Standalone
-- No build step required — open `index.html` to run locally
+- Single self-contained `index.html` (vanilla HTML, CSS and JS — no framework, no build step)
+- Fonts: Recoleta (local `.ttf` in `/fonts`) + Poppins (Google Fonts CDN)
 - Deployed on Netlify with auto-deploy from `main`
 
 ## Structure
 
 ```
-index.html          # Entry point
-/images             # Logo and photography
-/css                # Recoleta font files
-/project            # React component source files
-  Animations.jsx
-  Header.jsx
-  Hero.jsx
-  Stats.jsx
-  Process.jsx
-  Testimonials.jsx
-  CTA.jsx
+index.html          # The entire site (embedded <style> and <script>)
+/images             # Photography and candidate-card avatars
+/fonts              # Recoleta font files
+netlify.toml        # Publish dir + SPA redirect
 ```
 
 ## Local development
@@ -37,13 +30,3 @@ npx serve .
 ## Deployment
 
 Every push to `main` auto-deploys to [boundly.io](https://boundly.io) via Netlify.
-
-For changes, create a feature branch and open a PR:
-
-```bash
-git checkout -b feature/your-change
-# make edits
-git add . && git commit -m "describe change"
-git push -u origin feature/your-change
-gh pr create
-```
