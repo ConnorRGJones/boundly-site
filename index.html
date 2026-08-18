@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boundly | GTM Recruitment Agency for UK SaaS: Sales, Marketing &amp; CS Hiring</title>
-<meta name="description" content="Boundly is a boutique GTM recruitment agency specialising in sales, marketing and customer success hiring for UK B2B SaaS companies from pre-seed through to enterprise.">
+<title>Boundly | GTM Recruitment Agency for B2B SaaS: Sales, Marketing &amp; CS Hiring</title>
+<meta name="description" content="Boundly is a boutique GTM recruitment agency specialising in sales, marketing and customer success hiring for global B2B SaaS companies, from pre-seed through to enterprise.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,6 +188,8 @@
   .jcard h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.2px;}
   .jcard p{font-size:14px;color:var(--slate);line-height:1.65;}
   .jcard .pull{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--forest);line-height:1.5;font-weight:600;}
+  .journey-note{text-align:center;max-width:640px;margin:44px auto 0;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--slate);line-height:1.5;}
+  .journey-note .jn-lead{display:block;font-style:normal;font-weight:600;color:var(--ink);margin-bottom:4px;}
 
   /* ---------- Testimonials (light) ---------- */
   #testimonials{background:var(--cream);}
@@ -286,15 +288,15 @@
   .scard-meta .sal em{font-style:normal;font-weight:500;color:var(--slate);font-size:11px;margin-left:4px;}
   .scard-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px;}
   .scard-tags span{font-size:11.5px;font-weight:600;color:var(--slate);background:var(--off-white);border:1px solid var(--line);border-radius:6px;padding:4px 10px;}
-  .scard-li{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;background:#0A66C2;color:#fff;padding:5px;border-radius:6px;text-decoration:none;transition:background .2s,transform .2s;}
-  .scard-li:hover{background:#004182;transform:translateY(-1px);}
-  .scard-li svg{width:14px;height:14px;fill:currentColor;display:block;}
+  .scard-tags .scard-li{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;background:#0A66C2;color:#fff;padding:5px;border:0;border-radius:6px;text-decoration:none;cursor:default;}
+  .scard-tags .scard-li svg{width:14px;height:14px;fill:currentColor;display:block;}
   .scard-blurb{margin-top:15px;padding-left:12px;border-left:2px solid var(--copper);font-size:12.5px;line-height:1.55;color:var(--slate);}
   .scard-body{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}
   .scard-status{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:16px;}
-  .dotstat{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-  .dotstat.active{background:var(--forest);box-shadow:0 0 0 3px rgba(74,93,69,.16);}
-  .dotstat.passive{background:var(--slate);box-shadow:0 0 0 3px rgba(92,101,112,.16);}
+  .dotstat{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:#22C55E;box-shadow:0 0 0 3px rgba(34,197,94,.16);}
+  .dotstat.active,.dotstat.passive{background:#22C55E;}
+  @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6);}70%{box-shadow:0 0 0 9px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+  @media(prefers-reduced-motion:no-preference){.dotstat.active,.dotstat.passive{animation:dotPulse 2s ease-out infinite;}}
   .scard-scores{list-style:none;display:flex;flex-direction:column;gap:12px;}
   .scard-scores li{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .sc-name{font-size:13px;color:var(--slate);font-weight:500;}
@@ -305,8 +307,7 @@
   .scard-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);}
   .scard-rec{font-size:13px;font-weight:700;color:var(--copper);white-space:nowrap;}
   .scard-rec.muted{color:var(--slate);font-weight:600;}
-  .scard-btn{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:10px;transition:background .2s,transform .2s;white-space:nowrap;}
-  .scard-btn:hover{background:#000;transform:translateY(-1px);}
+  .scard-btn{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:10px;white-space:nowrap;cursor:default;}
 
   /* ---------- Contact ---------- */
   #contact{min-height:calc(100vh - 59px);display:flex;flex-direction:column;justify-content:center;padding:48px 0;scroll-margin-top:59px;}
@@ -423,9 +424,9 @@
     <div class="hero-box">
       <img class="hero-topo" src="images/topography.png" alt="" aria-hidden="true">
       <div class="hero-content">
-        <p class="eyebrow">GTM Recruitment · UK B2B SaaS · Pre-Seed to Enterprise</p>
+        <p class="eyebrow">GTM Recruitment · Global B2B SaaS · Pre-Seed to Enterprise</p>
         <h1>We've built GTM teams<br>from the <em>inside out.</em></h1>
-        <p class="sub">Boutique GTM recruitment for UK SaaS companies from pre-seed through to enterprise. We specialise in commercial hiring at the stages where the right people define the trajectory of the business.</p>
+        <p class="sub">Boutique GTM recruitment for global B2B SaaS companies, from pre-seed through to enterprise. We specialise in commercial hiring at the stages where the right people define the trajectory of the business.</p>
         <div class="actions">
           <a class="btn btn-primary btn-arrow" href="#contact">Start a conversation</a>
           <a class="btn btn-ghost btn-arrow" href="#how-we-work">How we work</a>
@@ -495,7 +496,7 @@
         <article class="jcard">
           <h3>Active search, not a database</h3>
           <p>Every search is curated from scratch. We go to market directly, find people suited to your brief and approach them thoughtfully on your behalf.</p>
-          <p class="pull">We build every longlist fresh. Your search is never recycled.</p>
+          <p class="pull">We build every list fresh. Your search is never recycled.</p>
         </article>
         <div class="jnode">02</div>
       </li>
@@ -516,6 +517,7 @@
         <div class="jnode">04</div>
       </li>
     </ol>
+    <p class="journey-note"><span class="jn-lead">Prefer to do things differently?</span>We're happy to shape our process around the way your team already likes to work.</p>
   </div>
 </section>
 
@@ -539,7 +541,7 @@
           </div>
         </div>
         <p class="scard-meta"><span class="loc">Manchester</span><span class="sep">·</span><span class="sal">£58k<em>desired</em></span></p>
-        <div class="scard-tags"><span>MarTech</span><span>Mid-Market</span><a class="scard-li" href="#" aria-label="View LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></div>
+        <div class="scard-tags"><span>MarTech</span><span>Mid-Market</span><span class="scard-li" role="img" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
         <p class="scard-blurb">Owns a £2M renewal book at 96% gross retention. Warm, methodical and genuinely loved by her accounts, actively looking after a reorg.</p>
         <div class="scard-body">
           <p class="scard-status"><span class="dotstat active"></span>Actively looking</p>
@@ -551,7 +553,7 @@
         </div>
         <div class="scard-foot">
           <span class="scard-rec muted">★ Shortlisted</span>
-          <a href="#contact" class="scard-btn">Request CV →</a>
+          <span class="scard-btn">Request CV →</span>
         </div>
       </article>
 
@@ -565,7 +567,7 @@
           </div>
         </div>
         <p class="scard-meta"><span class="loc">London</span><span class="sep">·</span><span class="sal">£85k<em>desired</em></span></p>
-        <div class="scard-tags"><span>Cyber Security</span><span>Enterprise</span><a class="scard-li" href="#" aria-label="View LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></div>
+        <div class="scard-tags"><span>Cyber Security</span><span>Enterprise</span><span class="scard-li" role="img" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
         <p class="scard-blurb">Seven years closing six-figure enterprise cyber deals at 120%+ attainment. Not on the market, but open to the right move.</p>
         <div class="scard-body">
           <p class="scard-status"><span class="dotstat passive"></span>Passive · open to the right move</p>
@@ -577,7 +579,7 @@
         </div>
         <div class="scard-foot">
           <span class="scard-rec">★ Recommended</span>
-          <a href="#contact" class="scard-btn">Request CV →</a>
+          <span class="scard-btn">Request CV →</span>
         </div>
       </article>
 
@@ -591,7 +593,7 @@
           </div>
         </div>
         <p class="scard-meta"><span class="loc">London</span><span class="sep">·</span><span class="sal">£140k<em>desired</em></span></p>
-        <div class="scard-tags"><span>FinTech</span><span>Series B</span><a class="scard-li" href="#" aria-label="View LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></div>
+        <div class="scard-tags"><span>FinTech</span><span>Series B</span><span class="scard-li" role="img" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span></div>
         <p class="scard-blurb">Scaled a sales team from 4 to 14 reps through Series A and B. Hands-on, data-led and trusted by founders, quietly curious.</p>
         <div class="scard-body">
           <p class="scard-status"><span class="dotstat passive"></span>Passive</p>
@@ -603,7 +605,7 @@
         </div>
         <div class="scard-foot">
           <span class="scard-rec muted">★ Shortlisted</span>
-          <a href="#contact" class="scard-btn">Request CV →</a>
+          <span class="scard-btn">Request CV →</span>
         </div>
       </article>
     </div>
@@ -673,7 +675,7 @@
         <li class="tl-slate">
           <strong>Saleslogic</strong><span class="years">2019–2021</span>
           <div class="role">GTM Recruiter (Agency)</div>
-          <div class="note">Placed GTM talent into UK SaaS businesses.</div>
+          <div class="note">Placed GTM talent into SaaS businesses.</div>
         </li>
         <li class="tl-red">
           <strong>Red Sift</strong><span class="years">2021–2024</span>
@@ -692,8 +694,8 @@
         </li>
       </ul>
       <div class="bio">
-        <p>I started Boundly because placing GTM talent and understanding GTM teams are two different things. Most agencies know how to fill a role. Far fewer understand how that role sits within the org, or what the person next to them actually needs.</p>
-        <p>That combination of knowing how agencies work and knowing what it actually feels like to be responsible for the hire is what Boundly is built on. I work with a small number of clients at a time so no one gets lost in the shuffle. No juniors, no one cut out of the loop.</p>
+        <p>I started Boundly because placing GTM talent and understanding GTM teams are two different things. Most agencies know how to fill a role. Far fewer understand how that role sits within the wider business, and care about how this placement will shape the company in the future.</p>
+        <p>That combination of knowing how agencies work and knowing what it actually feels like to be responsible for the hire is what Boundly is built on. I work with a small number of clients at a time, so every search gets my full attention from start to finish.</p>
         <p>If you're building a GTM team at any stage, from pre-seed to enterprise, and want to work with someone who's been on both sides of the table, I'd love to talk.</p>
         <figure class="bio-figure">
           <img class="bio-photo" src="images/connor.jpg" alt="Connor Jones, Founder of Boundly">
@@ -720,7 +722,7 @@
         <blockquote>Connor possesses an exceptional ability to advise on job roles and identify the perfect candidates. His skills go beyond matching resumes... he's a master recruiter who can effectively sell in a role, and his negotiation skills are top-notch.</blockquote>
         <figcaption>
           <div class="avatar" style="background:#A94E3B">CB</div>
-          <div class="who"><b>Claudia Belardo</b><span>VP Customer Success &amp; Experience · Red Sift</span></div>
+          <div class="who"><b>Claudia B.</b><span>VP Customer Success &amp; Experience</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -728,7 +730,7 @@
         <blockquote>I had the pleasure of being hired by Connor for my Senior CSM role. He took the time to thoughtfully assess my background, was always transparent and set realistic expectations, easily the best recruiter I've dealt with to date.</blockquote>
         <figcaption>
           <div class="avatar" style="background:var(--forest)">TM</div>
-          <div class="who"><b>Trisha Mason</b><span>Senior Customer Success Manager · Red Sift</span></div>
+          <div class="who"><b>Trisha M.</b><span>Senior Customer Success Manager</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -736,7 +738,7 @@
         <blockquote>Connor truly stands out with his unique blend of expertise, creativity, and business acumen. He has a special ability to combine professionalism with a sense of fun... creating an engaging experience for candidates and business leaders alike.</blockquote>
         <figcaption>
           <div class="avatar" style="background:var(--slate)">HA</div>
-          <div class="who"><b>Hamutal Alon</b><span>HR Leader · Talent Strategy · Cellebrite</span></div>
+          <div class="who"><b>Hamutal A.</b><span>HR Leader · Talent Strategy</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -744,7 +746,7 @@
         <blockquote>Highly professional and an excellent recruiter. I was very impressed by Connor's detailed market knowledge and knowledge of his clients. I would highly recommend Connor to any consultant looking for their next step.</blockquote>
         <figcaption>
           <div class="avatar" style="background:var(--copper)">OK</div>
-          <div class="who"><b>Omar K.</b><span>Sales Development Leader · Saleslogic</span></div>
+          <div class="who"><b>Omar K.</b><span>Sales Development Leader</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -752,7 +754,7 @@
         <blockquote>If anyone has left a positive first impression on my work life, it's Connor. His talent for representing a company is unmatched, and he pairs a person with a role like no other recruiter I've come across.</blockquote>
         <figcaption>
           <div class="avatar" style="background:#A94E3B">CM</div>
-          <div class="who"><b>Carolina Marin</b><span>Customer Success Manager · Red Sift</span></div>
+          <div class="who"><b>Carolina M.</b><span>Customer Success Manager</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -760,7 +762,7 @@
         <blockquote>It's been a pleasure working with Connor. He always does his research and helped me land a role. He's diligent, genuinely cares about his candidates, and is a brilliant relationship-builder.</blockquote>
         <figcaption>
           <div class="avatar" style="background:var(--copper)">VB</div>
-          <div class="who"><b>Valentin Biscarrat</b><span>Facilities Management · Former client</span></div>
+          <div class="who"><b>Valentin B.</b><span>Account Executive</span></div>
         </figcaption>
       </figure>
       <figure class="tcard">
@@ -768,7 +770,7 @@
         <blockquote>I can't say enough good things about Connor. I applied to Red Sift fresh out of university, certain I'd never get it. My process with Connor couldn't have been more different. Thoughtful, encouraging and completely fair.</blockquote>
         <figcaption>
           <div class="avatar" style="background:#A94E3B">LD</div>
-          <div class="who"><b>Lucy Duckmanton</b><span>Customer Success · Red Sift</span></div>
+          <div class="who"><b>Lucy D.</b><span>Customer Success</span></div>
         </figcaption>
       </figure>
     </div>
@@ -790,11 +792,11 @@
             <li>Boutique, not a volume business</li>
           </ul>
         </div>
-        <form onsubmit="return false;">
-          <label class="field"><span>Name *</span><input type="text" placeholder="Your name"></label>
-          <label class="field"><span>Email *</span><input type="email" placeholder="your@company.com"></label>
-          <label class="field"><span>Company *</span><input type="text" placeholder="Company name"></label>
-          <label class="field"><span>Message</span><textarea placeholder="Tell me about the role you're trying to fill..."></textarea></label>
+        <form id="contactForm">
+          <label class="field"><span>Name *</span><input type="text" name="fullname" placeholder="Your name" required></label>
+          <label class="field"><span>Email *</span><input type="email" name="email" placeholder="your@company.com" required></label>
+          <label class="field"><span>Company *</span><input type="text" name="company" placeholder="Company name" required></label>
+          <label class="field"><span>Message</span><textarea name="message" placeholder="Tell me about the role you're trying to fill..."></textarea></label>
           <button type="submit" class="btn btn-primary btn-arrow">Submit</button>
         </form>
       </div>
@@ -806,7 +808,7 @@
 <footer>
   <div class="container">
     <div class="logo">Boundly<span>.</span></div>
-    <span class="copyright">© 2026 Boundly · GTM Recruitment · UK B2B SaaS</span>
+    <span class="copyright">© 2026 Boundly · GTM Recruitment · B2B SaaS</span>
     <nav>
       <a href="/privacy-policy.html">Privacy Policy</a>
       <a href="/cookie-policy.html">Cookie Policy</a>
@@ -930,6 +932,26 @@
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
     items.forEach(el => io.observe(el));
+  })();
+
+  // Contact form - opens the visitor's email client addressed to Connor
+  (function(){
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const val = n => (form.querySelector('[name="' + n + '"]')?.value || '').trim();
+      const name = val('fullname'), company = val('company');
+      const subject = 'New enquiry via Boundly.io' + (company ? ' - ' + company : '');
+      const body =
+        'Name: ' + name + '\n' +
+        'Email: ' + val('email') + '\n' +
+        'Company: ' + company + '\n\n' +
+        (val('message') || '(no message)');
+      window.location.href = 'mailto:connor@boundly.io'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+    });
   })();
 </script>
 
