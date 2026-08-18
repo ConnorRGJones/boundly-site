@@ -330,6 +330,12 @@
   .field textarea{min-height:52px;}
   form input::placeholder,form textarea::placeholder{color:rgba(255,255,255,.32);}
   form button{width:100%;justify-content:center;margin-top:5px;padding:13px 22px;}
+  form button[disabled]{opacity:.55;cursor:not-allowed;}
+  .hp-field{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .form-msg{margin-top:12px;font-size:13.5px;line-height:1.55;border-radius:10px;padding:11px 14px;display:none;}
+  .form-msg.show{display:block;}
+  .form-msg.ok{background:rgba(74,93,69,.20);border:1px solid rgba(74,93,69,.55);color:#d3e6cd;}
+  .form-msg.err{background:rgba(193,125,69,.14);border:1px solid rgba(193,125,69,.5);color:#e7c39f;}
 
   /* ---------- Footer ---------- */
   footer{background:var(--ink);color:rgba(255,255,255,.5);padding:22px 0;}
@@ -792,12 +798,15 @@
             <li>Boutique, not a volume business</li>
           </ul>
         </div>
-        <form id="contactForm">
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp-field" aria-hidden="true"><label>Leave this field empty if you're human:<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <label class="field"><span>Name *</span><input type="text" name="fullname" placeholder="Your name" required></label>
           <label class="field"><span>Email *</span><input type="email" name="email" placeholder="your@company.com" required></label>
           <label class="field"><span>Company *</span><input type="text" name="company" placeholder="Company name" required></label>
           <label class="field"><span>Message</span><textarea name="message" placeholder="Tell me about the role you're trying to fill..."></textarea></label>
           <button type="submit" class="btn btn-primary btn-arrow">Submit</button>
+          <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -934,23 +943,56 @@
     items.forEach(el => io.observe(el));
   })();
 
-  // Contact form - opens the visitor's email client addressed to Connor
+  // Contact form - posts to Netlify Forms (emails Connor), with anti-spam guards
   (function(){
     const form = document.getElementById('contactForm');
+    const msg  = document.getElementById('formMsg');
     if (!form) return;
-    form.addEventListener('submit', e => {
+    const btn  = form.querySelector('button[type="submit"]');
+    const LIMIT = 3;                              // max messages per rolling 24h, per browser
+    const KEY   = 'boundly_contact_submits';
+
+    const recent = () => {
+      try {
+        const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+        return (JSON.parse(localStorage.getItem(KEY) || '[]')).filter(t => t > cutoff);
+      } catch (e) { return []; }
+    };
+    const record = () => {
+      try { const a = recent(); a.push(Date.now()); localStorage.setItem(KEY, JSON.stringify(a)); }
+      catch (e) {}
+    };
+    const show = (text, kind) => { msg.textContent = text; msg.className = 'form-msg show ' + kind; };
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const val = n => (form.querySelector('[name="' + n + '"]')?.value || '').trim();
-      const name = val('fullname'), company = val('company');
-      const subject = 'New enquiry via Boundly.io' + (company ? ' - ' + company : '');
-      const body =
-        'Name: ' + name + '\n' +
-        'Email: ' + val('email') + '\n' +
-        'Company: ' + company + '\n\n' +
-        (val('message') || '(no message)');
-      window.location.href = 'mailto:connor@boundly.io'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
+      if (form.querySelector('[name="bot-field"]').value) return;   // honeypot tripped -> silently drop
+
+      if (recent().length >= LIMIT) {
+        show("You've reached the limit of a few messages per day. Please email connor@boundly.io directly and I'll come straight back to you.", 'err');
+        return;
+      }
+
+      btn.disabled = true;
+      const label = btn.textContent;
+      btn.textContent = 'Sending…';
+      try {
+        const body = new URLSearchParams(new FormData(form)).toString();
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        });
+        if (!res.ok) throw new Error('status ' + res.status);
+        record();
+        form.reset();
+        show("Thanks — your message is on its way to Connor. Expect a reply within 24 hours.", 'ok');
+      } catch (err) {
+        show("Something went wrong sending your message. Please email connor@boundly.io directly.", 'err');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
     });
   })();
 </script>
