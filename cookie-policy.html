@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | Boundly</title>
+<meta name="description" content="Cookie Policy for Boundly, a boutique GTM recruitment service.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<style>
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-Black.ttf') format('truetype');font-weight:900;font-style:normal;font-display:swap;}
+
+  :root{
+    --off-white:#F7F5F0;--ink:#1a1a18;--copper:#C17D45;--forest:#4A5D45;--slate:#5C6570;
+    --card:#FFFFFF;--line:rgba(28,28,24,0.10);--line-soft:rgba(28,28,24,0.06);
+    --copper-08:rgba(193,125,69,0.08);--cream:#F0E7DA;
+    --serif:'Recoleta',Georgia,'Times New Roman',serif;--sans:'Poppins',system-ui,-apple-system,sans-serif;
+    --container:1720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--off-white);color:var(--slate);font-size:15px;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 40px;}
+
+  /* Header - matches main site */
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,240,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft);}
+  header .container{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .logo{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--ink);letter-spacing:-.3px;}
+  .logo span{color:var(--copper);}
+  header nav{display:flex;gap:34px;}
+  header nav a{font-size:14px;font-weight:500;color:var(--slate);transition:color .15s;}
+  header nav a:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 24px;border-radius:10px;cursor:pointer;border:none;transition:transform .2s ease,background .2s ease;}
+  .btn-primary{background:var(--copper);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.25) inset;}
+  .btn-primary:hover{background:#ad6d39;transform:translateY(-1px);}
+  .btn-arrow::after{content:"→";font-family:var(--sans);}
+
+  /* Legal page */
+  .legal-wrap{max-width:880px;margin:0 auto;padding:0 40px;}
+  .legal-head{padding:66px 0 34px;}
+  .legal-head .eyebrow{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:18px;}
+  .legal-head h1{font-family:var(--serif);font-weight:900;font-size:clamp(32px,5vw,50px);color:var(--ink);line-height:1.05;letter-spacing:-1px;}
+  .legal-head .updated{margin-top:16px;font-size:14px;color:var(--slate);line-height:1.7;}
+  .legal-body{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;padding:clamp(28px,4vw,56px);margin-bottom:80px;box-shadow:0 26px 70px -50px rgba(28,28,24,.4);}
+  .legal-body h2{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:-.3px;margin:44px 0 14px;padding-top:26px;border-top:1px solid var(--line-soft);}
+  .legal-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+  .legal-body h3{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);margin:24px 0 8px;}
+  .legal-body p{font-size:14.5px;line-height:1.8;color:var(--slate);margin-bottom:14px;}
+  .legal-body ul,.legal-body ol{padding-left:20px;margin-bottom:16px;}
+  .legal-body li{font-size:14.5px;line-height:1.75;color:var(--slate);margin-bottom:7px;}
+  .legal-body a{color:var(--copper);font-weight:500;}
+  .legal-body a:hover{text-decoration:underline;}
+  .legal-body strong{color:var(--ink);font-weight:600;}
+  .legal-body em{font-style:italic;}
+  .highlight-box{background:var(--copper-08);border-left:3px solid var(--copper);padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;}
+  .highlight-box p{margin:0;color:var(--ink);font-weight:500;}
+  table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:13.5px;}
+  th{background:var(--cream);text-align:left;font-weight:600;color:var(--ink);padding:11px 14px;border:1px solid var(--line);}
+  td{padding:11px 14px;color:var(--slate);border:1px solid var(--line-soft);vertical-align:top;line-height:1.6;}
+
+  /* Footer - matches main site */
+  footer{background:var(--ink);color:rgba(255,255,255,.5);padding:22px 0;}
+  footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  footer .logo{color:#fff;}
+  footer .logo span{color:var(--copper);}
+  footer .copyright{font-size:12.5px;}
+  footer nav{display:flex;gap:24px;}
+  footer nav a{font-size:12.5px;color:rgba(255,255,255,.55);transition:color .15s;}
+  footer nav a:hover{color:#fff;}
+
+  @media(max-width:640px){
+    .container,.legal-wrap{padding:0 22px;}
+    header nav{display:none;}
+    footer .container{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="logo" href="/">Boundly<span>.</span></a>
+    <nav>
+      <a href="/#how-we-work">How we work</a>
+      <a href="/#roles">Roles</a>
+      <a href="/#about">About</a>
+      <a href="/#testimonials">Testimonials</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-arrow" href="/#contact">Start a conversation</a>
+  </div>
+</header>
+
+<main class="legal-wrap">
+  <div class="legal-head">
+    <p class="eyebrow">Legal</p>
+    <h1>Cookie Policy</h1>
+    <p class="updated">Last updated: May 2026 &nbsp;·&nbsp; This policy explains how Boundly uses cookies and similar tracking technologies on this website.</p>
+  </div>
+
+  <div class="legal-body">
+
+    <h2>1. What are cookies?</h2>
+    <p>Cookies are small text files stored on your device when you visit a website. They help websites remember information about your visit — such as your preferences or how you navigated the site — and can improve your experience on future visits.</p>
+    <p>Some cookies are essential for the site to function. Others are used for analytics or personalisation and require your consent.</p>
+
+    <h2>2. Cookies we use</h2>
+
+    <h3>Essential cookies</h3>
+    <p>These cookies are necessary for the website to function and cannot be switched off. They are usually set in response to actions you take, such as filling in a form.</p>
+
+    <table>
+      <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
+      <tr><td>Session cookies</td><td>Boundly</td><td>Maintain basic site functionality</td><td>Session</td></tr>
+    </table>
+
+    <h3>Analytics cookies</h3>
+    <p>We use Google Analytics to understand how visitors interact with our website. All data collected is anonymised — we cannot identify you personally from this data. These cookies are only placed with your consent.</p>
+
+    <table>
+      <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
+      <tr><td>_ga</td><td>Google Analytics</td><td>Distinguishes unique users</td><td>2 years</td></tr>
+      <tr><td>_ga_*</td><td>Google Analytics</td><td>Stores session state</td><td>2 years</td></tr>
+      <tr><td>_gid</td><td>Google Analytics</td><td>Distinguishes users (daily)</td><td>24 hours</td></tr>
+      <tr><td>_gat</td><td>Google Analytics</td><td>Throttles request rate</td><td>1 minute</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <p>Google Analytics is configured with IP anonymisation enabled. We do not share analytics data with third parties or use it for advertising purposes.</p>
+    </div>
+
+    <h2>3. How to manage cookies</h2>
+    <p>You can control and manage cookies in several ways:</p>
+
+    <h3>Browser settings</h3>
+    <p>Most browsers allow you to refuse or delete cookies. The method varies by browser — use the links below for guidance:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+    <p>Please note that disabling cookies may affect the functionality of this and other websites.</p>
+
+    <h3>Opt out of Google Analytics</h3>
+    <p>You can opt out of Google Analytics tracking across all websites by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+    <h2>4. Third-party cookies</h2>
+    <p>Our website does not currently serve third-party advertising cookies. If you navigate to third-party sites (such as LinkedIn) via links on our site, those sites may set their own cookies, which are governed by their own privacy and cookie policies.</p>
+
+    <h2>5. Changes to this policy</h2>
+    <p>We may update this Cookie Policy from time to time. The date at the top of this page will always reflect the most recent version.</p>
+
+    <h2>6. Contact</h2>
+    <p>If you have any questions about our use of cookies, please contact us at <a href="mailto:connor@boundly.io">connor@boundly.io</a>.</p>
+    <p>For more information about cookies generally, visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener">allaboutcookies.org</a>.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">Boundly<span>.</span></div>
+    <span class="copyright">© 2026 Boundly · GTM Recruitment · B2B SaaS</span>
+    <nav>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="https://www.linkedin.com/company/boundlyio/">LinkedIn →</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

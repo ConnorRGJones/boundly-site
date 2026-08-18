@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Boundly</title>
+<meta name="description" content="Privacy Policy for Boundly, a boutique GTM recruitment service operated by Connor Robert Jones.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<style>
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Recoleta';src:url('fonts/Recoleta-Black.ttf') format('truetype');font-weight:900;font-style:normal;font-display:swap;}
+
+  :root{
+    --off-white:#F7F5F0;--ink:#1a1a18;--copper:#C17D45;--forest:#4A5D45;--slate:#5C6570;
+    --card:#FFFFFF;--line:rgba(28,28,24,0.10);--line-soft:rgba(28,28,24,0.06);
+    --copper-08:rgba(193,125,69,0.08);--cream:#F0E7DA;
+    --serif:'Recoleta',Georgia,'Times New Roman',serif;--sans:'Poppins',system-ui,-apple-system,sans-serif;
+    --container:1720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--off-white);color:var(--slate);font-size:15px;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 40px;}
+
+  /* Header - matches main site */
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,240,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft);}
+  header .container{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .logo{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--ink);letter-spacing:-.3px;}
+  .logo span{color:var(--copper);}
+  header nav{display:flex;gap:34px;}
+  header nav a{font-size:14px;font-weight:500;color:var(--slate);transition:color .15s;}
+  header nav a:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 24px;border-radius:10px;cursor:pointer;border:none;transition:transform .2s ease,background .2s ease;}
+  .btn-primary{background:var(--copper);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.25) inset;}
+  .btn-primary:hover{background:#ad6d39;transform:translateY(-1px);}
+  .btn-arrow::after{content:"→";font-family:var(--sans);}
+
+  /* Legal page */
+  .legal-wrap{max-width:880px;margin:0 auto;padding:0 40px;}
+  .legal-head{padding:66px 0 34px;}
+  .legal-head .eyebrow{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:18px;}
+  .legal-head h1{font-family:var(--serif);font-weight:900;font-size:clamp(32px,5vw,50px);color:var(--ink);line-height:1.05;letter-spacing:-1px;}
+  .legal-head .updated{margin-top:16px;font-size:14px;color:var(--slate);line-height:1.7;}
+  .legal-body{background:var(--card);border:1px solid var(--line-soft);border-radius:18px;padding:clamp(28px,4vw,56px);margin-bottom:80px;box-shadow:0 26px 70px -50px rgba(28,28,24,.4);}
+  .legal-body h2{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:-.3px;margin:44px 0 14px;padding-top:26px;border-top:1px solid var(--line-soft);}
+  .legal-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+  .legal-body h3{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);margin:24px 0 8px;}
+  .legal-body p{font-size:14.5px;line-height:1.8;color:var(--slate);margin-bottom:14px;}
+  .legal-body ul,.legal-body ol{padding-left:20px;margin-bottom:16px;}
+  .legal-body li{font-size:14.5px;line-height:1.75;color:var(--slate);margin-bottom:7px;}
+  .legal-body a{color:var(--copper);font-weight:500;}
+  .legal-body a:hover{text-decoration:underline;}
+  .legal-body strong{color:var(--ink);font-weight:600;}
+  .legal-body em{font-style:italic;}
+  .highlight-box{background:var(--copper-08);border-left:3px solid var(--copper);padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;}
+  .highlight-box p{margin:0;color:var(--ink);font-weight:500;}
+  table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:13.5px;}
+  th{background:var(--cream);text-align:left;font-weight:600;color:var(--ink);padding:11px 14px;border:1px solid var(--line);}
+  td{padding:11px 14px;color:var(--slate);border:1px solid var(--line-soft);vertical-align:top;line-height:1.6;}
+
+  /* Footer - matches main site */
+  footer{background:var(--ink);color:rgba(255,255,255,.5);padding:22px 0;}
+  footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  footer .logo{color:#fff;}
+  footer .logo span{color:var(--copper);}
+  footer .copyright{font-size:12.5px;}
+  footer nav{display:flex;gap:24px;}
+  footer nav a{font-size:12.5px;color:rgba(255,255,255,.55);transition:color .15s;}
+  footer nav a:hover{color:#fff;}
+
+  @media(max-width:640px){
+    .container,.legal-wrap{padding:0 22px;}
+    header nav{display:none;}
+    footer .container{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="logo" href="/">Boundly<span>.</span></a>
+    <nav>
+      <a href="/#how-we-work">How we work</a>
+      <a href="/#roles">Roles</a>
+      <a href="/#about">About</a>
+      <a href="/#testimonials">Testimonials</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-arrow" href="/#contact">Start a conversation</a>
+  </div>
+</header>
+
+<main class="legal-wrap">
+  <div class="legal-head">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 2026 &nbsp;·&nbsp; This policy explains how Boundly collects, uses and protects your personal data.</p>
+  </div>
+
+  <div class="legal-body">
+
+    <h2>1. Who we are</h2>
+    <p>Boundly is a boutique GTM recruitment service operated as a sole trader by <strong>Connor Robert Jones</strong>.</p>
+    <p><strong>Data Controller:</strong> Connor Robert Jones, trading as Boundly<br>
+    <strong>Contact:</strong> <a href="mailto:connor@boundly.io">connor@boundly.io</a><br>
+    <strong>Website:</strong> <a href="https://boundly.io">https://boundly.io</a></p>
+    <div class="highlight-box">
+      <p>ICO Registration Number: <em>To be added upon registration</em>. Boundly is in the process of registering with the Information Commissioner's Office (ICO) as required under UK GDPR.</p>
+    </div>
+
+    <h2>2. What personal data we collect</h2>
+
+    <h3>From clients and prospective clients</h3>
+    <ul>
+      <li>Name, job title, company name and email address</li>
+      <li>Information about your hiring requirements, role briefs and business context</li>
+      <li>Communications via email, phone, LinkedIn or the website contact form</li>
+    </ul>
+
+    <h3>From candidates</h3>
+    <ul>
+      <li>Name, email address, phone number and location</li>
+      <li>CV, work history, skills, qualifications and career aspirations</li>
+      <li>Interview notes and assessment information</li>
+      <li>Information collected via LinkedIn Recruiter</li>
+      <li>Notes and transcripts from AI-assisted interview tools (such as Metaview), where consent has been obtained</li>
+    </ul>
+
+    <h3>From website visitors</h3>
+    <ul>
+      <li>Information submitted through the contact form (name, email, company, message)</li>
+      <li>Anonymous usage data via Google Analytics (pages visited, session duration, device type)</li>
+    </ul>
+
+    <h2>3. How we use your data</h2>
+
+    <table>
+      <tr><th>Purpose</th><th>Lawful basis</th></tr>
+      <tr><td>Matching candidates to suitable roles and contacting them about opportunities</td><td>Legitimate interests</td></tr>
+      <tr><td>Providing recruitment services to clients</td><td>Contract / Legitimate interests</td></tr>
+      <tr><td>Responding to enquiries submitted via the contact form</td><td>Legitimate interests</td></tr>
+      <tr><td>Maintaining records of placements and recruitment activity</td><td>Legitimate interests / Legal obligation</td></tr>
+      <tr><td>Sending relevant recruitment updates or market insights by email (where opted in)</td><td>Consent</td></tr>
+      <tr><td>Improving the website through analytics</td><td>Consent (via cookie preferences)</td></tr>
+    </table>
+
+    <h2>4. Third-party tools and processors</h2>
+    <p>We use the following third-party tools that may process personal data on our behalf:</p>
+
+    <table>
+      <tr><th>Tool</th><th>Purpose</th><th>Data shared</th></tr>
+      <tr><td>LinkedIn Recruiter</td><td>Candidate sourcing and outreach</td><td>Candidate profile data</td></tr>
+      <tr><td>Metaview (and similar AI note-taking tools)</td><td>Interview note-taking and transcription</td><td>Interview audio/content — consent obtained prior to use</td></tr>
+      <tr><td>Google Analytics</td><td>Website usage analytics</td><td>Anonymised visitor data</td></tr>
+      <tr><td>Formsubmit.co</td><td>Contact form delivery</td><td>Form submission content</td></tr>
+      <tr><td>Email marketing platform (future)</td><td>Recruitment newsletters/updates</td><td>Name and email — consent required</td></tr>
+    </table>
+
+    <p>All third-party processors are required to handle your data in accordance with UK GDPR. We do not sell your personal data to any third party.</p>
+
+    <h2>5. How long we keep your data</h2>
+    <ul>
+      <li><strong>Candidate CVs and personal data:</strong> 12 months from the date of last contact, after which data is securely deleted unless you ask us to retain it</li>
+      <li><strong>Client contact data:</strong> For the duration of the business relationship, plus 3 years</li>
+      <li><strong>Contact form submissions:</strong> 12 months</li>
+      <li><strong>Email correspondence:</strong> 3 years</li>
+      <li><strong>Analytics data:</strong> As per Google Analytics retention settings (default 26 months)</li>
+    </ul>
+
+    <h2>6. Your rights under UK GDPR</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+      <li><strong>Rectification</strong> — ask us to correct inaccurate or incomplete data</li>
+      <li><strong>Erasure</strong> — request deletion of your data where there is no compelling reason to retain it</li>
+      <li><strong>Restriction</strong> — ask us to limit how we use your data</li>
+      <li><strong>Portability</strong> — receive your data in a structured, machine-readable format</li>
+      <li><strong>Object</strong> — object to processing based on legitimate interests (including direct marketing)</li>
+      <li><strong>Withdraw consent</strong> — where processing is based on consent, you may withdraw it at any time</li>
+    </ul>
+    <p>To exercise any of these rights, email <a href="mailto:connor@boundly.io">connor@boundly.io</a>. We will respond within 30 days.</p>
+
+    <h2>7. Data security</h2>
+    <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss or disclosure. Data is stored within secure platforms and access is limited to Connor Robert Jones.</p>
+
+    <h2>8. International transfers</h2>
+    <p>Some third-party tools (including Google Analytics and LinkedIn) may transfer data outside the UK. Where this occurs, appropriate safeguards are in place in accordance with UK GDPR, including Standard Contractual Clauses or adequacy decisions.</p>
+
+    <h2>9. Complaints</h2>
+    <p>If you have concerns about how we handle your data, please contact us first at <a href="mailto:connor@boundly.io">connor@boundly.io</a>. You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or by calling 0303 123 1113.</p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>We may update this policy from time to time. The date at the top of this page will always reflect the most recent version. Significant changes will be communicated where appropriate.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">Boundly<span>.</span></div>
+    <span class="copyright">© 2026 Boundly · GTM Recruitment · B2B SaaS</span>
+    <nav>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/cookie-policy.html">Cookie Policy</a>
+      <a href="https://www.linkedin.com/company/boundlyio/">LinkedIn →</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
